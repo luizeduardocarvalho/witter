@@ -16,6 +16,29 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
+        "/ping": {
+            "get": {
+                "description": "Returns a PONG",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "SampleController"
+                ],
+                "summary": "Returns a PONG",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
         "/publicmessage": {
             "get": {
                 "description": "Returns a sample string",
@@ -28,7 +51,7 @@ const docTemplate = `{
                 "tags": [
                     "SampleController"
                 ],
-                "summary": "Show a string",
+                "summary": "Shows a string",
                 "responses": {
                     "200": {
                         "description": "OK",
